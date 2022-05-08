@@ -79,12 +79,10 @@ void cycle_memory() {
              * Lab3-2 assignment
              * Tips: assign the read value to `MEM_VAL`
              */
-            int temp = 0;
             // copied from lab 2.2 lh, similar loop
             for(int i = 0; i < w / 8; i++){
-                temp += sext_unit(MASK7_0(MEMORY[CURRENT_LATCHES.MAR + i]), w) << (8 * i); //(MEMORY[CURRENT_LATCHES.MAR + i] << 8 * i);
+                MEM_VAL += sext_unit(MASK7_0(MEMORY[CURRENT_LATCHES.MAR + i]), w) << (8 * i); //(MEMORY[CURRENT_LATCHES.MAR + i] << 8 * i);
             }
-            MEM_VAL = temp; //sext_unit(temp, w);
 
             //error("Lab3-2 assignment: read from the main memory");
         }
