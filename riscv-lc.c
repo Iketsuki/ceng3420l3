@@ -62,6 +62,7 @@ void cycle_memory() {
             int d = datasize_mux(get_DATASIZE(CURRENT_LATCHES.MICROINSTRUCTION), mask_val(CURRENT_LATCHES.IR, 14, 12) ,0);
             printf("d is now %d", d);
             int w = 8 * (-d);
+            printf("/t w is now %d /n", w);
             if(d != -1 && d != -2){
                 w = 32;
             }
@@ -81,6 +82,7 @@ void cycle_memory() {
             int d = datasize_mux(get_DATASIZE(CURRENT_LATCHES.MICROINSTRUCTION), mask_val(CURRENT_LATCHES.IR, 14, 12) ,0);
             printf("d is now %d", d);
             int w = 8 * (-d);
+            printf("/t w is now %d /n", w);
             if(d != -1 && d != -2){
                 w = 32;
             }
