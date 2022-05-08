@@ -56,9 +56,9 @@ void cycle_memory() {
         }
 
         // Lab 3.2, can be both for read and write
-        int d = datasize_mux(get_DATASIZE(CURRENT_LATCHES.MICROINSTRUCTION), mask_val(CURRENT_LATCHES.IR, 14, 12) ,0);
-        int w = 8 * (-d);
-        if(d != -1 && d != -2){
+        int d = -datasize_mux(get_DATASIZE(CURRENT_LATCHES.MICROINSTRUCTION), mask_val(CURRENT_LATCHES.IR, 14, 12) ,0);
+        int w = 8 * d;
+        if(d != 1 && d != 2){
             w = 32;
         }
         if (W) {
@@ -79,11 +79,12 @@ void cycle_memory() {
              * Lab3-2 assignment
              * Tips: assign the read value to `MEM_VAL`
              */
+            int temp = 0;
             // copied from lab 2.2 lh, similar loop
             for(int i = 0; i < w / 8; i++){
-                MEM_VAL += (MEMORY[CURRENT_LATCHES.MAR + i] << 8 * i);
+                temp += (MEMORY[CURRENT_LATCHES.MAR + i] << 8 * i);
             }
-            MEM_VAL = sext_unit(MEM_VAL, w);
+            MEM_VAL = sext_unit(temp, w);
             //error("Lab3-2 assignment: read from the main memory");
         }
         mem_cycle_cnt++;
