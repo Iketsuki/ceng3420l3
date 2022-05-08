@@ -200,14 +200,12 @@ void drive_bus() {
              */
             BUS = value_of_GateMAR;
             break;
-            //error("Lab3-3 assignment: when value = 1, BUS = ?;\n");
         case 2:
             /*
              *  Lab3-3 assignment
              */
             BUS = value_of_GateALUSHF;
             break;
-            //error("Lab3-3 assignment: when value = 2, BUS = ?;\n");
         case 4:
             /*
              *  Lab3-3 assignment
