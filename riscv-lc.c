@@ -61,7 +61,7 @@ void cycle_memory() {
              */
             int d = datasize_mux(get_DATASIZE(CURRENT_LATCHES.MICROINSTRUCTION), mask_val(CURRENT_LATCHES.IR, 14, 12) ,0);
             int w = 8 * (-d);
-            if(!d || d == -3){
+            if(d != -1 && d != -2){
                 w = 32;
             }
 
@@ -79,7 +79,7 @@ void cycle_memory() {
              */
             int d = datasize_mux(get_DATASIZE(CURRENT_LATCHES.MICROINSTRUCTION), mask_val(CURRENT_LATCHES.IR, 14, 12) ,0);
             int w = 8 * (-d);
-            if(!d || d == -3){
+            if(d != -1 && d != -2){
                 w = 32;
             }
             MEM_VAL = 0;
