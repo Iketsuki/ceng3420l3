@@ -83,6 +83,7 @@ void cycle_memory() {
             for(int i = 0; i < w / 8; i++){
                 MEM_VAL += (MEMORY[CURRENT_LATCHES.MAR + i] << 8 * i);
             }
+            MEM_VAL = sext_unit(MEM_VAL, w);
             //error("Lab3-2 assignment: read from the main memory");
         }
         mem_cycle_cnt++;
